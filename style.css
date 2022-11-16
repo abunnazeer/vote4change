@@ -1,11 +1,19 @@
 /* varible Setting */
 :root {
-  /* Main color */
-  --bg-color: #fff;
   /* Primary Color */
-  --primary-color-200: grey;
-  --primary-color-100: #d2d2d2;
+
+  --grey-color: #808080;
+  --grey-color-400: #d2d2d24a;
+  --grey-color-300: #45454545;
+  --grey-color-200: #f3dede;
+  --grey-color-100: #d2d2d2;
   /* Secondary color */
+  --black-color: #000;
+  --white-color: #fff;
+  --green-color: #008000;
+  --green-color-trans: #0080006b;
+  --green-color-hover: #5bbe5b;
+  --red-color: #ff00009c;
 
   /* optional color */
 }
@@ -25,11 +33,11 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: var(--bg-color);
+  background-color: var(--white-color);
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--black-color);
 }
 
 .main__container {
@@ -48,13 +56,17 @@ a {
 .empty__space_40 {
   height: 40rem;
 }
+
+/* main styles start here */
+/* ///////////////////// */
+/* header */
 .header {
   position: sticky;
   top: 0;
-  background-color: var(--bg-color);
+  background-color: var(--white-color);
   padding: 1rem 0;
   text-align: center;
-  border-bottom: 0.2rem solid green;
+  border-bottom: 0.2rem solid var(--green-color);
   z-index: 1;
 }
 
@@ -64,22 +76,31 @@ a {
 }
 .banner__section {
   position: relative;
-  /* padding: 10rem 0 0 3rem;
-  background-color: var(--primary-color-100); */
-
-  /* height: 25rem; */
 }
-.banner__section img {
+.banner__section {
   width: 100%;
+  height: 20rem;
+  transition: transform 1s;
+
+  /* transition: transform 1s; */
 }
+
+.banner__section > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* #banner__img {
+ 
+} */
 .caption {
   position: absolute;
-  background-color: #0080006b;
+  background-color: var(--green-color-trans);
   padding: 0.5rem;
   top: 2rem;
   left: 1rem;
   width: 90%;
-  color: #fff;
+  color: var(--white-color);
   font-size: 2rem;
 }
 .vote__btn {
@@ -87,31 +108,30 @@ a {
   top: 8rem;
   left: 10rem;
   width: 11rem;
-  background-color: green;
-  color: #fff;
+  background-color: var(--green-color);
+  color: var(--white-color);
   padding: 1rem;
   font-size: 1.5rem;
 }
 .vote__btn:hover {
-  background-color: #5bbe5b;
+  background-color: var(--green-color-hover);
   cursor: pointer;
 }
-
+/* candidate styles in home */
 .candidate__container {
   position: relative;
-  background-color: var(--bg-color);
-  /* top: -1.5rem; */
+  background-color: var(--white-color);
   bottom: 3rem;
   width: 90%;
   height: 30rem;
   margin: 1rem auto;
   border-radius: 2rem;
   padding-top: 0.5rem;
-  box-shadow: 0px 0px 2px 1px rgb(69 69 69 / 27%);
+  box-shadow: 0px 0px 2px 1px var(--grey-color-300);
 }
 
 .candidate__list {
-  background-color: #d2d2d24a;
+  background-color: var(--grey-color-400);
   margin: 1rem 1rem 0 1rem;
   padding: 1rem;
   display: flex;
@@ -138,38 +158,35 @@ a {
 .number__of__voting {
   display: flex;
   justify-content: center;
-  background-color: #d2d2d24a;
+  background-color: var(--grey-color-400);
   margin: 0 1rem;
-  border-top: 0.3rem solid #f3dede;
-  /* padding: 0.5rem 0 1rem 1rem; */
-  /* gap: 1rem; */
+  border-top: 0.3rem solid var(--grey-color-200);
 }
 
 .voting__yes,
 .voting__no {
-  color: #fff;
+  color: var(--white-color);
   padding: 0.5rem 1rem;
   width: 50%;
-  /* margin: 0 1rem; */
 }
 
 .voting__yes {
-  background-color: #0080008f;
+  background-color: var(--green-color-trans);
 }
 
 .voting__no {
-  background-color: #ff00009c;
+  background-color: var(--red-color);
 }
 .voting__number,
 .vote__label {
   text-align: center;
   font-size: 1.5rem;
 }
-
+/* bottom menu */
 .footer__container {
   width: 100%;
-  background-color: var(--bg-color);
-  border-top: 0.2rem solid green;
+  background-color: var(--white-color);
+  border-top: 0.2rem solid var(--green-color);
   position: fixed;
   bottom: 0;
 }
@@ -185,30 +202,30 @@ a {
 }
 
 .menu__active {
-  color: #d2d2d2;
+  color: var(--grey-color-100);
 }
 .icon__size--active {
   font-size: 2rem;
-  color: #0080008f !important;
+  color: var(--green-color-trans) !important;
 }
 .icon__size {
   font-size: 2rem;
-  color: green;
+  color: var(--green-color);
 }
 
 /* Login Form */
 
 .login__container {
-  background-color: rgb(196, 196, 196);
+  background-color: var(--grey-color-100);
   width: 90%;
   margin: 1rem auto 8rem auto;
 }
 .login__header {
-  background-color: green;
+  background-color: var(--green-color);
   margin: auto;
   padding: 1rem;
-  color: #fff;
-  font-size: 1.5rem;
+  color: var(--white-color);
+  font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -232,14 +249,14 @@ textarea {
   padding: 1rem;
 }
 .btn__style {
-  background-color: green;
-  color: #fff;
+  background-color: var(--green-color);
+  color: var(--white-color);
   font-size: 2rem;
   border: none;
 }
 
 .btn__style:hover {
-  background-color: #5bbe5b;
+  background-color: var(--green-color-hover);
   cursor: pointer;
 }
 
@@ -257,8 +274,8 @@ textarea {
 }
 
 .voting__label {
-  background-color: green;
-  font-size: 2rem;
-  color: #fff;
+  background-color: var(--green-color);
+  font-size: 1.5rem;
+  color: var(--white-color);
   padding: 1rem;
 }
