@@ -1,0 +1,264 @@
+/* varible Setting */
+:root {
+  /* Main color */
+  --bg-color: #fff;
+  /* Primary Color */
+  --primary-color-200: grey;
+  --primary-color-100: #d2d2d2;
+  /* Secondary color */
+
+  /* optional color */
+}
+
+/*Reset setting */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Global Setting */
+html {
+  font-size: 65.5%;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.main__container {
+  width: 90%;
+  margin: 2rem auto;
+}
+.empty__space_10 {
+  height: 10rem;
+}
+.empty__space_20 {
+  height: 20rem;
+}
+.empty__space_30 {
+  height: 30rem;
+}
+.empty__space_40 {
+  height: 40rem;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 0.2rem solid green;
+  z-index: 1;
+}
+
+.header img {
+  width: 20rem;
+  margin: auto;
+}
+.banner__section {
+  position: relative;
+  /* padding: 10rem 0 0 3rem;
+  background-color: var(--primary-color-100); */
+
+  /* height: 25rem; */
+}
+.banner__section img {
+  width: 100%;
+}
+.caption {
+  position: absolute;
+  background-color: #0080006b;
+  padding: 0.5rem;
+  top: 2rem;
+  left: 1rem;
+  width: 90%;
+  color: #fff;
+  font-size: 2rem;
+}
+.vote__btn {
+  position: absolute;
+  top: 8rem;
+  left: 10rem;
+  width: 11rem;
+  background-color: green;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.vote__btn:hover {
+  background-color: #5bbe5b;
+  cursor: pointer;
+}
+
+.candidate__container {
+  position: relative;
+  background-color: var(--bg-color);
+  /* top: -1.5rem; */
+  bottom: 3rem;
+  width: 90%;
+  height: 30rem;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  padding-top: 0.5rem;
+  box-shadow: 0px 0px 2px 1px rgb(69 69 69 / 27%);
+}
+
+.candidate__list {
+  background-color: #d2d2d24a;
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.candidate__list img {
+  width: 7rem;
+  height: auto;
+  border-radius: 10px;
+}
+.candidate__label--box {
+  flex: 1;
+}
+.candidate__name {
+  margin: 0 0 0.9rem 0.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.candidate__position {
+  margin: 0.9rem 0 0.9rem 0.5rem;
+  font-size: 1.2rem;
+}
+.number__of__voting {
+  display: flex;
+  justify-content: center;
+  background-color: #d2d2d24a;
+  margin: 0 1rem;
+  border-top: 0.3rem solid #f3dede;
+  /* padding: 0.5rem 0 1rem 1rem; */
+  /* gap: 1rem; */
+}
+
+.voting__yes,
+.voting__no {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  width: 50%;
+  /* margin: 0 1rem; */
+}
+
+.voting__yes {
+  background-color: #0080008f;
+}
+
+.voting__no {
+  background-color: #ff00009c;
+}
+.voting__number,
+.vote__label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.footer__container {
+  width: 100%;
+  background-color: var(--bg-color);
+  border-top: 0.2rem solid green;
+  position: fixed;
+  bottom: 0;
+}
+.footer__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.menu__box {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.menu__active {
+  color: #d2d2d2;
+}
+.icon__size--active {
+  font-size: 2rem;
+  color: #0080008f !important;
+}
+.icon__size {
+  font-size: 2rem;
+  color: green;
+}
+
+/* Login Form */
+
+.login__container {
+  background-color: rgb(196, 196, 196);
+  width: 90%;
+  margin: 1rem auto 8rem auto;
+}
+.login__header {
+  background-color: green;
+  margin: auto;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.login__content {
+  padding: 1rem 0;
+}
+.login__content input,
+.btn__style,
+textarea {
+  width: 90%;
+  height: 4rem;
+  outline: none;
+  padding: 0 1rem;
+  display: block;
+  margin: auto;
+}
+
+.login__content textarea {
+  height: 15rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.btn__style {
+  background-color: green;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+}
+
+.btn__style:hover {
+  background-color: #5bbe5b;
+  cursor: pointer;
+}
+
+/* voting styles */
+.vote__container {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+  margin: 0 0 1rem 0 !important;
+}
+.vote__container img {
+  width: 7rem;
+  height: auto;
+  border-radius: 10px;
+}
+
+.voting__label {
+  background-color: green;
+  font-size: 2rem;
+  color: #fff;
+  padding: 1rem;
+}
