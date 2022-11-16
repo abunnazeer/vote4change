@@ -5,6 +5,13 @@ const bannerContainer = document.querySelector('.banner__section');
 const bannerImg = document.querySelector('#banner__img');
 const caption = document.querySelector('.caption');
 const bannerVoteBtn = document.querySelector('.vote__btn');
+const candidateName = document.querySelector('.candidate__name');
+const candidateImage = document.querySelector('.cand__image');
+const candidatePosition = document.querySelector('.candidate__position');
+const voteYes = document.querySelector('.voting__yes');
+const voteNo = document.querySelector('.voting__no');
+
+const candidateContainer = document.querySelector('.candidate__container');
 //slide images and caption
 const slideDetails = [
   {
@@ -41,19 +48,19 @@ const slideDetails = [
 const candidateDetails = [
   [
     {
-      image: 'assets/img/tinub.png',
+      image: 'assets/img/tinubu.png',
       fullName: 'Ahmad Bola Tinubu',
       position: 'APC Presidential Candidate',
       noOfVote: 0,
     },
     {
-      image: 'assets/img/tinub.png',
+      image: 'assets/img/Atiku.png',
       fullName: 'Atiku Abubakar',
       position: 'PDP Presidential Candidate',
       noOfVote: 0,
     },
     {
-      image: 'assets/img/tinub.png',
+      image: 'assets/img/Rabiu-Musa-Kwankwaso',
       fullName: 'Rabiu Musa Kwankoso',
       position: 'ANPP Presidential Candidate',
       noOfVote: 0,
@@ -62,37 +69,105 @@ const candidateDetails = [
 
   [
     {
-      image: 'assets/img/kashim.png',
+      image: 'assets/img/Kashim-Shettima.png',
       fullName: 'Kashim Shettima',
       position: 'APC Vice Presidential Candidate',
       noOfVote: 0,
     },
     {
-      image: 'assets/img/ifeanyi.png',
+      image: 'assets/img/Ifeanyichukwu.png',
       fullName: 'Ifeanyi Chukwu Arthur Okowa',
       position: 'PDP Vice Presidential Candidate',
       noOfVote: 0,
     },
     {
-      image: 'assets/img/tinub.png',
+      image: 'assets/img/Edwin-Ume-Ezeoke.png',
       fullName: 'Chief Edwin Ume-Ezeoke',
       position: 'ANPP Vice Presidential Candidate',
       noOfVote: 0,
     },
   ],
 ];
+
+const candidateDetail = [
+  {
+    image: 'assets/img/tinubu.png',
+    fullName: 'Ahmad Bola Tinubu',
+    position: 'APC Presidential Candidate',
+    noOfVote: 0,
+  },
+  {
+    image: 'assets/img/Atiku.png',
+    fullName: 'Atiku Abubakar',
+    position: 'PDP Presidential Candidate',
+    noOfVote: 0,
+  },
+  {
+    image: 'assets/img/Rabiu-Musa-Kwankwaso.png',
+    fullName: 'Rabiu Musa Kwankoso',
+    position: 'ANPP Presidential Candidate',
+    noOfVote: 0,
+  },
+
+  {
+    image: 'assets/img/Kashim-Shettima.png',
+    fullName: 'Kashim Shettima',
+    position: 'APC Vice Presidential Candidate',
+    noOfVote: 0,
+  },
+  {
+    image: 'assets/img/Ifeanyichukwu.png',
+    fullName: 'Ifeanyi Chukwu Arthur Okowa',
+    position: 'PDP Vice Presidential Candidate',
+    noOfVote: 0,
+  },
+  {
+    image: 'assets/img/Edwin-Ume-Ezeoke.png',
+    fullName: 'Chief Edwin Ume-Ezeoke',
+    position: 'ANPP Vice Presidential Candidate',
+    noOfVote: 0,
+  },
+];
 // this navigate to vote page
 bannerVoteBtn?.addEventListener('click', () => (location.href = 'vote.html'));
 
 // Load the banner slides
-let curent = 0;
+let i = 0;
 window.addEventListener('DOMContentLoaded', function () {
   setInterval(() => {
-    bannerImg.src = slideDetails[curent].imgPth;
-    caption.textContent = slideDetails[curent].caption;
-    curent++;
-    if (curent === slideDetails.length) {
-      curent = 0;
+    bannerImg.src = slideDetails[i].imgPth;
+    caption.textContent = slideDetails[i].caption;
+    i++;
+    if (i === slideDetails.length) {
+      i = 0;
     }
   }, 5000);
 });
+
+//add candidate dynamically to the home page
+const displayCandidate = function (candidateDetails) {
+  candidateContainer.innerHTML = '';
+  candidateDetails.forEach(function (cand, i) {
+    const html = `<div class="candidate__list">
+          <img src="${cand.image}" class="cand_image" alt="">
+          <div class="candidate__label--box">
+            <h3 class="candidate__name">${cand.fullName}</h3>
+            <p class="candidate__position">${cand.position}</p>
+          </div>
+        </div>
+         <div class="number__of__voting">
+          <div class="voting__yes">
+            <p class="voting__number">${cand.noOfVote} <span>Votes</span></p>
+            <!-- <p class="vote__label">Voted</p> -->
+          </div>
+          <div class="voting__no">
+            <p class="voting__number">-10 <span>Votes</span></p>
+            <!-- <p class="vote__label">Voted</p> -->
+          </div>
+        </div>
+        `;
+    // console.log(html);
+    candidateContainer.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayCandidate(candidateDetail);
