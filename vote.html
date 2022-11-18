@@ -19,23 +19,20 @@
     </header>
     <!-- Presidential -->
     <section class="main__container">
+      <div>Choose your candiate</div>
       <div class="voting__label">President</div>
       <div class="vote__container candidate__list">
-        <input
-          type="radio"
-          id="cand__id"
-          name="president"
-          value="name"
-          checked
-        />
+        <input type="radio" id="cand__id" name="president" value="0" checked />
         <img src="assets/img/tinubu.png" alt="" srcset="" />
         <div class="candidate__label--box">
-          <label for="name" class="candidate__name">AHMAD BOLA TINUBU</label>
+          <label for="name" class="candidate__name"
+            >AHMAD BOLA TINUBU <span class="countingvote">0</span></label
+          >
           <p class="candidate__position">APC Presidential candidate</p>
         </div>
       </div>
       <div class="vote__container candidate__list">
-        <input type="radio" id="cand__id" name="president" value="name" />
+        <input type="radio" id="cand__id" name="president" value="2" />
         <img src="assets/img/Atiku.png" alt="" srcset="" />
         <div class="candidate__label--box">
           <label for="name" class="candidate__name">ATIKU ABUBAKAR</label>
@@ -43,7 +40,7 @@
         </div>
       </div>
       <div class="vote__container candidate__list">
-        <input type="radio" id="cand__id" name="president" value="name" />
+        <input type="radio" id="cand__id" name="president" value="3" />
         <img src="assets/img/Rabiu-Musa-Kwankwaso.png" alt="" srcset="" />
         <div class="candidate__label--box">
           <label for="name" class="candidate__name">Rabiu Musa Kwankwaso</label>
@@ -53,7 +50,7 @@
     </section>
 
     <!-- Vice President -->
-    <section class="main__container">
+    <!-- <section class="main__container">
       <div class="voting__label">Vice President</div>
       <div class="vote__container candidate__list">
         <input type="radio" id="cand__id" name="vp" value="name" checked />
@@ -83,7 +80,7 @@
           <p class="candidate__position">ANPP Vice Presidential candidate</p>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Senators -->
     <!-- <section class="main__container">
       <div class="voting__label">Senate</div>
@@ -140,7 +137,7 @@
         </div>
       </div>
     </section> -->
-    <button type="submit" class="btn__style">Submit Vote</button>
+    <button type="submit" class="btn__style" id="votes">Submit Vote</button>
     <div class="empty__space_10"></div>
 
     <footer class="footer__container">
